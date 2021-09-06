@@ -8,3 +8,7 @@
   - writing to files
   - working with directories
   - deleting files
+- Stream: start using data before it has finished loading
+- Buffer
+  - Reading and writing large amount of data
+  - Piping
