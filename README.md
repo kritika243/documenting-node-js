@@ -1,25 +1,6 @@
 # Documenting my Node.js Journey
 
-- Setting up a server
-- Localhost: it is like a domain name on the web
-- Port Number: are like doors into a computer
-- Request and Response Object
-- Listen for a request
-- Send a reponse
-  - set Content-Type eg text/plain or html
-  - write the response
-  - end and then send the response
-- Returning HTML pages as reponse
-- Routing and sending corresponding responses
-- Status Codes: describe the type of response send to the browser
-  - 200 - OK
-  - 301 - Resource moved
-  - 404 - Not found
-  - 500 - Internal server error
-  - In terms of range:
-    - 100 range: informational responses
-    - 200 range: success codes
-    - 300 range: codes for redirects
-    - 400 range: user or client error codes
-    - 5oo range: server error codes
-- Redirects
+- npm
+- packages
+- dependencies
+- package.json()

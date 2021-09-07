@@ -1,8 +1,18 @@
 const http = require('http')
 const fs = require('fs')
+const _ = require('lodash')
 
 const server = http.createServer((req, res) => {
-  console.log(req.url, req.method)
+  // lodash
+  const randNum = _.random(0, 25)
+  console.log(randNum)
+
+  const greet = _.once(() => {
+    console.log('Hiii')
+  })
+
+  greet() // runs once
+  greet() // does not run
 
   let path = './views/'
 
