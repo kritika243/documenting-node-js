@@ -8,3 +8,4 @@
   - using JavaScript inside views, dynamicaally passing content
   - use of <% %>
   - use of <%= %>
+- Partial templates with EJS (reusable templte)
