@@ -22,3 +22,4 @@
     - 300 range: codes for redirects
     - 400 range: user or client error codes
     - 5oo range: server error codes
+- Redirects
