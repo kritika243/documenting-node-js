@@ -1,6 +1,4 @@
 # Documenting my Node.js Journey
 
-- Creating an express app
-- Routing
-- Redirects
-- Working with 404 error
+- View Engines (for rendering view to the browser)
+- ejs
