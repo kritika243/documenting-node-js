@@ -19,3 +19,10 @@ app.get('/about', (req, res) => {
 app.get('/about-us', (req, res) => {
   res.redirect('/about')
 })
+
+// 404 page
+// if the code reaches upto this point, that is no match for requested url, the use function then sends the 404.html file
+app.use((req, res) => {
+  // we cam chain like this because res.status() also retuens res object
+  res.status(404).sendFile('./views/404.html', { root: __dirname })
+})
