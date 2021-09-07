@@ -9,3 +9,4 @@
   - set Content-Type eg text/plain or html
   - write the response
   - end and then send the response
+- Returning HTML pages as reponse
