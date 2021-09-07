@@ -10,3 +10,4 @@
   - write the response
   - end and then send the response
 - Returning HTML pages as reponse
+- Routing and sending corresponding responses
