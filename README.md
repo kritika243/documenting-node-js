@@ -1,3 +1,5 @@
 # Documenting my Node.js Journey
 
-- Blog App
+Building a Blog App, where the user can view blogs and write a new blog
+
+( _Ongoing_)
