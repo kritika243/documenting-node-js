@@ -1,7 +1,12 @@
 const expres = require('express')
 const morgan = require('morgan')
+const mongoose = require('mongoose')
 
 const app = expres()
+
+// for connection to mongodb
+const dbURI =
+  'mongodb+srv://user_K:thisisatestpassword@clusterblogop.ujaxl.mongodb.net/BlogOP?retryWrites=true&w=majority'
 
 // register view engine
 app.set('view engine', 'ejs')
