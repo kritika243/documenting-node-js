@@ -11,6 +11,10 @@ app.listen(3000)
 
 // app.use(morgan('dev'))
 
+/*============ Middleware and static files ==============*/
+// we are telling that "public" is the folder that has been made public to the browser
+app.use(expres.static('public'))
+
 app.get('/', (req, res) => {
   const blogs = [
     {
