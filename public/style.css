@@ -16,6 +16,11 @@ ul {
   text-decoration: none;
   color: #222;
 }
+
+p.snippet {
+  margin-bottom: 30px;
+}
+
 /* nav & footer styles */
 nav {
   display: flex;
