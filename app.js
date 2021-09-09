@@ -1,6 +1,7 @@
 const expres = require('express')
 const morgan = require('morgan')
 const mongoose = require('mongoose')
+const Blog = require('./models/blog')
 
 const app = expres()
 
@@ -21,6 +22,22 @@ app.set('view engine', 'ejs')
 /*============ Middleware and static files ==============*/
 // we are telling that "public" is the folder that has been made public to the browser
 app.use(expres.static('public'))
+
+// mongoosse and mongo sandbox routes
+app.get('/add-blog', (req, res) => {
+  const blog = new Blog({
+    title: 'new blog',
+    snippet: 'this is the snippet for the new blog',
+    body: 'body of the new blog',
+  })
+
+  blog
+    .save()
+    .then((resut) => {
+      res.send(resut)
+    })
+    .catch((err) => console.log(err))
+})
 
 app.get('/', (req, res) => {
   const blogs = [
