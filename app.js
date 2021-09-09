@@ -25,16 +25,27 @@ app.use(expres.static('public'))
 
 // mongoosse and mongo sandbox routes
 app.get('/add-blog', (req, res) => {
+  // creating an instance of the Blog
   const blog = new Blog({
     title: 'new blog',
     snippet: 'this is the snippet for the new blog',
     body: 'body of the new blog',
   })
 
+  // using the save method on the instance to saving data to the db
   blog
     .save()
     .then((resut) => {
       res.send(resut)
+    })
+    .catch((err) => console.log(err))
+})
+
+app.get('/all-blogs', (req, res) => {
+  // using the find method on the model to get all the blogs
+  Blog.find()
+    .then((result) => {
+      res.send(result)
     })
     .catch((err) => console.log(err))
 })
