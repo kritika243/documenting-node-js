@@ -8,11 +8,13 @@ const app = expres()
 const dbURI =
   'mongodb+srv://user_K:thisisatestpassword@clusterblogop.ujaxl.mongodb.net/BlogOP?retryWrites=true&w=majority'
 
+mongoose
+  .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then((result) => app.listen(3000))
+  .catch((err) => console.log(err))
+
 // register view engine
 app.set('view engine', 'ejs')
-
-// listen for request
-app.listen(3000)
 
 // app.use(morgan('dev'))
 
