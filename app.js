@@ -23,61 +23,23 @@ app.set('view engine', 'ejs')
 // we are telling that "public" is the folder that has been made public to the browser
 app.use(expres.static('public'))
 
-// mongoosse and mongo sandbox routes
-app.get('/add-blog', (req, res) => {
-  // creating an instance of the Blog
-  const blog = new Blog({
-    title: 'new blog',
-    snippet: 'this is the snippet for the new blog',
-    body: 'body of the new blog',
-  })
-
-  // using the save method on the instance to saving data to the db
-  blog
-    .save()
-    .then((resut) => {
-      res.send(resut)
-    })
-    .catch((err) => console.log(err))
-})
-
-app.get('/all-blogs', (req, res) => {
-  // using the find method on the model to get all the blogs
-  Blog.find()
-    .then((result) => {
-      res.send(result)
-    })
-    .catch((err) => console.log(err))
-})
-
-app.get('/single-blog', (req, res) => {
-  Blog.findById('6139b013105b5a4a6455e0e3')
-    .then((result) => {
-      res.send(result)
-    })
-    .catch((err) => console.log(err))
-})
-
+// routes
 app.get('/', (req, res) => {
-  const blogs = [
-    {
-      title: 'Saleb likes PHP',
-      snippet: 'Lorem ipsum dolor sit amet consectetur',
-    },
-    {
-      title: 'Aron prefers GoLang',
-      snippet: 'Lorem ipsum dolor sit amet consectetur',
-    },
-    {
-      title: 'Jacob: How to defeat browser',
-      snippet: 'Lorem ipsum dolor sit amet consectetur',
-    },
-  ]
-  res.render('index', { title: 'Home', blogs: blogs })
+  res.redirect('/blogs')
 })
 
 app.get('/about', (req, res) => {
   res.render('about', { title: 'About' })
+})
+
+// blog routes
+app.get('/blogs', (req, res) => {
+  Blog.find()
+    .sort({ createdAt: -1 })
+    .then((result) => {
+      res.render('index', { title: 'All Blogs', blogs: result })
+    })
+    .catch((err) => console.log(err))
 })
 
 app.get('/blogs/create', (req, res) => {
