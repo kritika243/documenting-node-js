@@ -23,6 +23,9 @@ app.set('view engine', 'ejs')
 // we are telling that "public" is the folder that has been made public to the browser
 app.use(expres.static('public'))
 
+// to get the req.body on form submission on the frontend
+app.use(expres.urlencoded({ extended: true }))
+
 // routes
 app.get('/', (req, res) => {
   res.redirect('/blogs')
@@ -38,6 +41,18 @@ app.get('/blogs', (req, res) => {
     .sort({ createdAt: -1 })
     .then((result) => {
       res.render('index', { title: 'All Blogs', blogs: result })
+    })
+    .catch((err) => console.log(err))
+})
+
+app.post('/blogs', (req, res) => {
+  // passing the form data to the Blog document
+  const blog = new Blog(req.body)
+
+  blog
+    .save()
+    .then((result) => {
+      res.redirect('/blogs')
     })
     .catch((err) => console.log(err))
 })
