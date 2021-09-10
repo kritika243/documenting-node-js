@@ -2,6 +2,7 @@ const expres = require('express')
 const morgan = require('morgan')
 const mongoose = require('mongoose')
 const Blog = require('./models/blog')
+const { render } = require('ejs')
 
 const app = expres()
 
@@ -36,6 +37,11 @@ app.get('/about', (req, res) => {
 })
 
 // blog routes
+
+app.get('/blogs/create', (req, res) => {
+  res.render('create', { title: 'New Blog' })
+})
+
 app.get('/blogs', (req, res) => {
   Blog.find()
     .sort({ createdAt: -1 })
@@ -57,8 +63,15 @@ app.post('/blogs', (req, res) => {
     .catch((err) => console.log(err))
 })
 
-app.get('/blogs/create', (req, res) => {
-  res.render('create', { title: 'New Blog' })
+app.get('/blogs/:id', (req, res) => {
+  // to first extract the id
+  const id = req.params.id
+  // retrieve the blog from the db using the id
+  Blog.findById(id)
+    .then((result) => {
+      res.render('details', { blog: result, title: 'Read All' })
+    })
+    .catch((err) => console.log(err))
 })
 
 // 404 page

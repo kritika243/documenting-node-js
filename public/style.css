@@ -30,6 +30,11 @@ nav {
   border-bottom: 1px solid #ddd;
   text-transform: uppercase;
 }
+
+nav div p {
+  color: #a4abea;
+}
+
 nav ul {
   display: flex;
   justify-content: space-between;
@@ -66,6 +71,15 @@ h3 {
   margin-left: 20px;
 }
 /* index styles */
+.blogs a {
+  display: block;
+  margin: 40px 0;
+  padding-left: 30px;
+  border-left: 6px solid #a4abea;
+}
+.blogs a:hover h3 {
+  color: #6c7dea;
+}
 /* details styles */
 /* create styles */
 .create-blog form {
@@ -89,7 +103,7 @@ textarea {
 }
 .create-blog button {
   margin-top: 20px;
-  background: rgb(10, 1, 54);
+  background: #6c7dea;
   color: white;
   padding: 6px;
   border: 0;
