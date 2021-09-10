@@ -81,6 +81,22 @@ h3 {
   color: #6c7dea;
 }
 /* details styles */
+.details {
+  position: relative;
+}
+.delete {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  padding: 8px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.delete:hover {
+  cursor: pointer;
+  box-shadow: 1px 2px 3px #7b87ee;
+}
 /* create styles */
 .create-blog form {
   max-width: 400px;
