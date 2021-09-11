@@ -4,7 +4,7 @@ Finished a Blog App, where in the user can view blogs (sorted by date), open and
 
 ## Tech Stack
 
-MVC Model
+MVC Model <br>
 <b>Client Side</b>: Views, templates in EJS
 <br>
 <b>NPM Dependencies</b>
@@ -34,3 +34,9 @@ MVC Model
 - Getting data from the database collections
 - Ability to creating a new blog and handling POST request
 - Ability to delete a blog through DELETE request
+
+### Preview
+
+![](https://github.com/kritika243/documenting-node-js/blob/main/public/blog-op.gif)
+
+#
