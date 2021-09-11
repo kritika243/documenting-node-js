@@ -1,5 +1,3 @@
 # Documenting my Node.js Journey
 
-Building a Blog App, where the user can view blogs and write a new blog
-
-( _Ongoing_)
+Finished a Blog App, where in the user can view blogs (sorted by date), open and read the full blog, delete blogs and create new blogs.
