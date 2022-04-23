@@ -7,6 +7,10 @@ console.log('Hello World')
 // has common core modules
 // CommonJs modules instead of ES6 imports - 'require' instead of import
 const os = require('os')
+
 console.log(os.type())
 console.log(os.homedir())
 console.log(os.version())
+
+console.log(__dirname)
+console.log(__filename)
