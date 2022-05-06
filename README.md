@@ -1,3 +1,3 @@
 # ✍️ Documenting...
 
-Finished a Blog App, where in the user can view blogs (sorted by date), open and read the full blog, delete blogs and create new blogs. ->> [here](https://github.com/kritika243/documenting-node-js/tree/project-based-learning)
+Finished a Blog Application, where in the user can view blogs (sorted by date), open and read the full blog, delete blogs and create new blogs. ->> [here](https://github.com/kritika243/documenting-node-js/tree/project-based-learning)
