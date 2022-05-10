@@ -11,6 +11,12 @@ const server = http.createServer((req, res) => {
     res.end('caught you on the overview page')
   } else if (pathName === '/product') {
     res.end('Welcome to the product page')
+  } else if (pathName === '/api') {
+    fs.readFile(`${__dirname}/dev-data/data.json`, 'utf-8', (err, data) => {
+      const allProducts = JSON.parse(data)
+      res.writeHead(200, { 'Content-Type': 'application/json' })
+      res.end(data)
+    })
   } else {
     res.writeHead(404, {
       'Content-type': 'text/html',
