@@ -1,10 +1,8 @@
 # Farm Fresh
 
 - Overview page displaying all items dynamically from json file
-
+  <img src='https://github.com/kritika243/documenting-node-js/blob/master/farm-fresh-proj/public/screenshot.png' alt='screenshot' height="300" width="300" >
 - Individual item page
-
-<img src='https://github.com/kritika243/documenting-node-js/blob/master/farm-fresh-proj/public/screenshot.png' alt='screenshot' >
 
 ####
 
