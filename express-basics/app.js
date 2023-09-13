@@ -1,19 +1,15 @@
 const express = require('express')
-const morgan = require('morgan')
-const logger = require('./logger')
-const authorize = require('./authorize')
 const app = express()
 
 
-// app.use([logger, authorize])
-app.use(morgan('tiny'))
+let { people } = require('./data')
 
-app.get('/', (req, res) => {
-  res.send('home')
+
+app.get('/api/people', (req, res) => {
+  res.status(200).json({ success: true, data: people })
 })
-app.get('/about', (req, res) => {
-  res.send('about')
-})
+
+
 
 
 
